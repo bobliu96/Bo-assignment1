@@ -35,6 +35,7 @@ resource "azurerm_windows_virtual_machine" "winvm" {
   size                            = each.value
   admin_username                  = var.windows_admin_username
   admin_password                  = var.windows_admin_password
+  availability_set_id = azurerm_availability_set.winavs.id
   network_interface_ids = [
     azurerm_network_interface.winnic[each.key].id
   ]

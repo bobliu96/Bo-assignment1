@@ -71,6 +71,8 @@ module "loadbalancer" {
   location       = module.rgroup.rg.location
   subnet1_id     = module.network.subnet1_id
   lb_name        = "9579-a1-lb"
+  nic_id1 = module.vmlinux.linux_nic_id[0][0]
+  nic_id2 = module.vmlinux.linux_nic_id[0][1]
 }
 
 module "database" {

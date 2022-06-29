@@ -29,3 +29,7 @@ output "linux_private_ip" {
 output "linux_public_ip" {
   value = [azurerm_linux_virtual_machine.vm[*].public_ip_address]
 }
+
+output "linux_nic_id" {
+  value = [azurerm_network_interface.nic[*].id]
+}

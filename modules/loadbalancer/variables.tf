@@ -37,3 +37,11 @@ variable "lb_probe_name" {
 }
 
 variable "subnet1_id" {}
+
+variable "nic_id1" {
+  
+}
+
+variable "nic_id2" {
+  
+}

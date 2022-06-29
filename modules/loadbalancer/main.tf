@@ -29,11 +29,11 @@ resource "azurerm_network_interface_backend_address_pool_association" "lbpoola" 
   backend_address_pool_id = azurerm_lb_backend_address_pool.lbpool.id
 }
 
-# resource "azurerm_network_interface_backend_address_pool_association" "lbpoola2" {
-#   network_interface_id    = var.nic_id2
-#   ip_configuration_name   = "a1-9579-linux-vm-ipconfig2"
-#   backend_address_pool_id = azurerm_lb_backend_address_pool.lbpool.id
-# }
+resource "azurerm_network_interface_backend_address_pool_association" "lbpoola2" {
+  network_interface_id    = var.nic_id2
+  ip_configuration_name   = "a1-9579-linux-vm-ipconfig2"
+  backend_address_pool_id = azurerm_lb_backend_address_pool.lbpool.id
+}
 
 resource "azurerm_lb_rule" "lb_rule" {
   loadbalancer_id                = azurerm_lb.a1lb.id

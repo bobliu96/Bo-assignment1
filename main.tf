@@ -49,6 +49,7 @@ module "vmwindows" {
     a1-win-vm = "Standard_B1s"
   }
   blob_endpoint = module.common.primary_blob_endpoint
+  vm_extension_name = "antimalware"
   depends_on = [
     module.network
   ]

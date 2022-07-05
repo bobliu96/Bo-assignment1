@@ -60,6 +60,20 @@ variable "update_doamin_count" {
   default = 5
 }
 
+variable "vm_extension_name" {}
+
+variable "vm_extension_publisher" {
+  default = "Microsoft.Azure.Security.AntimalwareSignature"
+}
+
+variable "vm_extension_type" {
+  default = "AntimalwareConfiguration"
+}
+
+variable "vm_extension_version" {
+  default = "2.0"
+}
+
 locals {
   common_tags = {
     Project        = "Automation Project-Assignment 1"

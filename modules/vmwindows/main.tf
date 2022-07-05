@@ -73,3 +73,14 @@ resource "azurerm_availability_set" "winavs" {
   platform_update_domain_count = var.update_doamin_count
   tags                = local.common_tags
 }
+
+resource "azurerm_virtual_machine_extension" "antimalware" {
+  for_each                   = var.windows_name
+  name                       = var.vm_extension_name
+  virtual_machine_id         = azurerm_windows_virtual_machine.winvm[each.key].id
+  publisher                  = var.vm_extension_publisher
+  type                       = var.vm_extension_type
+  type_handler_version       = var.vm_extension_version
+  auto_upgrade_minor_version = true
+  tags                       = local.common_tags
+}

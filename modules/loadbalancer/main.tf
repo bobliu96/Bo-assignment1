@@ -13,7 +13,7 @@ resource "azurerm_public_ip" "lbpip" {
   location                = var.location
   resource_group_name     = var.resource_group
   domain_name_label       = var.dns_label
-  allocation_method       = "Dynamic"
+  allocation_method       = "Static"
   idle_timeout_in_minutes = 30
 
 }
@@ -39,13 +39,15 @@ resource "azurerm_lb_rule" "lb_rule" {
   loadbalancer_id                = azurerm_lb.a1lb.id
   name                           = var.lb_rule_name
   protocol                       = "Tcp"
-  frontend_port                  = 222
-  backend_port                   = 222
+  frontend_port                  = 80
+  backend_port                   = 80
   frontend_ip_configuration_name = var.frt_ip_config
+  backend_address_pool_ids       = [azurerm_lb_backend_address_pool.lbpool.id]
+  probe_id                       =  azurerm_lb_probe.lb_probe.id
 }
 
 resource "azurerm_lb_probe" "lb_probe" {
   loadbalancer_id = azurerm_lb.a1lb.id
   name            = var.lb_probe_name
-  port            = 222
+  port            = 80
 }

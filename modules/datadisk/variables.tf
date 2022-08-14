@@ -26,3 +26,7 @@ variable "datadisk_lun" {
 variable "datadisk_caching" {
   default = "ReadWrite"
 }
+
+variable "playbook_path" {
+  default = "'/Users/boboxu/Library/Mobile Documents/com~apple~CloudDocs/学习/Cloud Computing/5502 Automation/Terraform/Bo-assignment1/ansible/playbook.yml'"
+}

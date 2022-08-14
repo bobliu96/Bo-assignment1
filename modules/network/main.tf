@@ -28,6 +28,18 @@ resource "azurerm_network_security_group" "network-nsg1" {
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
+
+   security_rule {
+    name                       = "Port_80"
+    priority                   = 110
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "80"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
 }
 
 resource "azurerm_subnet_network_security_group_association" "network-nsga" {

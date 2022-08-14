@@ -1,0 +1,21 @@
+[linux]
+a1-9579-linux-vm-dns1.australiaeast.cloudapp.azure.com
+a1-9579-linux-vm-dns2.australiaeast.cloudapp.azure.com
+
+[windows]
+a1-win-vm-dns.australiaeast.cloudapp.azure.com
+
+[linux:vars]
+ansible_user = Bo-N01529579
+
+[os:children]
+linux
+windows
+
+[windows:vars]
+ansible_user=winadm
+ansible_password="Winadm!23"
+ansible_connection=winrm
+ansible_port=5985
+ansible_winrm_transport=ntlm
+ansible_winrm_server_cert_validation=ignore

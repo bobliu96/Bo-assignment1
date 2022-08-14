@@ -1,0 +1,6 @@
+---
+user_list:
+  - username: user1000
+  - username: user2000
+hostname1: a1-9579-linux-vm-1
+hostname2: a1-9579-linux-vm-2

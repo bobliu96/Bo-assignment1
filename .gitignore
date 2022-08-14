@@ -1,2 +1,5 @@
 .terraform
 .terraform.lock.hcl
+ansible/keys/*
+ansible/a1-9579-linux-vm-1.html
+ansible/a1-9579-linux-vm-2.html
